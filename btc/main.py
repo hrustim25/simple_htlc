@@ -43,7 +43,6 @@ def create_htlc_script(secret_number, author_pubkey, partner_pubkey):
     # unlock_script = <author/partner sig> <secret_hex>
     lock_script = f'OP_SHA256 {secret_hash} OP_EQUAL ' \
     'OP_IF ' \
-        'OP_2 OP_EQUAL ' \
         f'{partner_pubkey} OP_CHECKSIG ' \
     'OP_ELSE ' \
         '60 OP_CHECKSEQUENCEVERIFY ' \
